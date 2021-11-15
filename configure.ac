@@ -1,16 +1,15 @@
-AC_PREREQ([2.69])
-AC_INIT([novas], [3.1], [me@kiranshila.com])
+AC_PREREQ()
+AC_INIT([libnovas], [3.1], [me@kiranshila.com])
 AC_CONFIG_AUX_DIR(aux-dist)
-AM_INIT_AUTOMAKE([foreign])
 
-AC_PROG_MAKE_SET
+AM_PROG_AR
+AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+
 AC_PROG_CC
-
-LT_PREREQ([2.4.6])
-LT_INIT([dlopen shared])
-
+AC_PROG_MAKE_SET
+AC_CONFIG_FILES([Makefile])
 AC_CONFIG_MACRO_DIR([m4])
 
-AC_CONFIG_FILES([Makefile])
+LT_INIT([dlopen shared win32-dll])
 
 AC_OUTPUT
